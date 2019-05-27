@@ -4,9 +4,9 @@ import Counter from "./counter";
 class Counters extends Component {
   state = {
     counters: [
-      { id: 1, value: 13 },
-      { id: 2, value: 0 },
-      { id: 3, value: 23 },
+      { id: 1, value: 7 },
+      { id: 2, value: 13 },
+      { id: 3, value: 19 },
       { id: 4, value: 0 }
     ]
   };
@@ -24,8 +24,8 @@ class Counters extends Component {
 
   handleReset = () => {
     const counters = this.state.counters.map(c => {
-      let resetCounter = { id: c.id, value: 0 };
-      return resetCounter;
+      c.value = 0;
+      return c;
     });
     this.setState({ counters });
   };
